@@ -28,6 +28,7 @@ def Visualize(pkldata,title,xlablel,ylabel,xscale,yscale,legend,figsize,location
 	
 if __name__ == '__main__':
 	epoch_list = [1,2,3,4,5]
-	loss_list = [1.09,0.92,0.85,0.80,0.62]
-	pickle.dump( ([epoch_list, loss_list]), open( 'pkldata.pkl', "wb" ) )        
-	Visualize('pkldata.pkl','Loss History','epoch','Loss',None,'log',None,(15,7),'Figures/')
+	loss_list_train = [1.09,0.92,0.85,0.80,0.62]
+	loss_list_test = [1.03,0.99,0.95,0.91,0.72]
+	pickle.dump( ([epoch_list, loss_list_train, loss_list_test]), open( 'pkldata.pkl', "wb" ) )        
+	Visualize('pkldata.pkl','Loss History','epoch','Loss',None,'log',['train loss', 'test loss'],(15,7),'Figures/')
